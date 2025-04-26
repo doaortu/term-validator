@@ -1,6 +1,6 @@
 {application, term_validator, [
 	{description, "A quick and simple Erlang term validator."},
-	{vsn, "1.0.0"},
+	{vsn, "1.0.1"},
 	{modules, [
         term_validator,
         any_validator,
