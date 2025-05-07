@@ -8,13 +8,13 @@
 %% Written by Jonathan De Wachter <jonathan.dewachter@byteplug.io>, March 2023
 %%
 -module(term_validator).
--moduledoc """
-Term validator API.
+%-moduledoc """
+%Term validator API.
 
-It provides the single validate/2 function this library features (along with
-a variant to specify a custom set of validators) and a function to retrieve
-the built-in validators.
-""".
+%It provides the single validate/2 function this library features (along with
+%a variant to specify a custom set of validators) and a function to retrieve
+%the built-in validators.
+%""".
 
 -export_type([validator_name/0]).
 
@@ -68,21 +68,21 @@ the built-in validators.
     {invalid_option_value, option_name(), Reason :: term()}
 .
 
--doc """
-Validate an Erlang term using the built-in validators.
-
-It is equivalent to calling the `validate/3` function with the list of
-built-in validators.
-""".
+%-doc """
+%Validate an Erlang term using the built-in validators.
+%
+%It is equivalent to calling the `validate/3` function with the list of
+%built-in validators.
+%""".
 -spec validate(term(), format()) -> validate_ret().
 validate(Term, Format) ->
     validate(Term, Format, validators()).
 
--doc """
-Validate an Erlang term using the specified validators.
-
-It validates an Erlang term using a specified set of validators.
-""".
+%-doc """
+%Validate an Erlang term using the specified validators.
+%
+%It validates an Erlang term using a specified set of validators.
+%""".
 -spec validate(term(), format(), validators()) -> validate_ret().
 validate(Term, Format, Validators) ->
     {Name, Options} = case Format of
@@ -119,12 +119,12 @@ validate(Term, Format, Validators) ->
             end
     end.
 
--doc """
-Return the built-in validators.
-
-It returns a map containing the built-in validators. The keys are the
-validator names and the values are the validator modules.
-""".
+%-doc """
+%Return the built-in validators.
+%
+%It returns a map containing the built-in validators. The keys are the
+%validator names and the values are the validator modules.
+%""".
 -spec validators() -> validators().
 validators() ->
     #{
